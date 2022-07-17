@@ -1,8 +1,8 @@
 import React from "react";
 import mailSvg from "./assets/mail.svg";
-// import manSvg from "./assets/man.svg";
+import manSvg from "./assets/man.svg";
 import womanSvg from "./assets/woman.svg";
-// import manAgeSvg from "./assets/growing-up-man.svg";
+import manAgeSvg from "./assets/growing-up-man.svg";
 import womanAgeSvg from "./assets/growing-up-woman.svg";
 import mapSvg from "./assets/map.svg";
 import phoneSvg from "./assets/phone.svg";
@@ -78,7 +78,11 @@ function App() {
                 setValue(user[0].name.first);
               }}
             >
-              <img src={womanSvg} alt="user" id="iconImg" />
+              <img
+                src={user[0].gender === "male" ? manSvg : womanSvg}
+                alt="user"
+                id="iconImg"
+              />
             </button>
             <button
               className="icon"
@@ -98,7 +102,11 @@ function App() {
                 setValue(user[0].dob.age);
               }}
             >
-              <img src={womanAgeSvg} alt="age" id="iconImg" />
+              <img
+                src={user[0].gender === "male" ? manAgeSvg : womanAgeSvg}
+                alt="age"
+                id="iconImg"
+              />
             </button>
             <button
               className="icon"
